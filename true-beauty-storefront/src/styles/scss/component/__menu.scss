@@ -1,0 +1,37 @@
+.menu {
+  --color-header-links: #151515;
+  --color-header-links-hover: #151515;
+  --color-accent: #151515;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  > li {
+    display: inline-flex;
+    padding: 0 15px;
+    align-items: center;
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  &__content {
+    &:hover {
+      &:after {
+        transform: scale(1);
+        transition: all .25s cubic-bezier(.104,.204,.492,1);
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      will-change: transform;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background: var(--color-header-links-hover, --color-accent);
+    }
+  }
+}

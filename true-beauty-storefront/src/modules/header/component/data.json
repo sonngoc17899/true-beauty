@@ -1,0 +1,70 @@
+{
+  "name": "Announcement Bar",
+  "blocks": [
+    {
+      "name": "Announcement Bar Items",
+      "blocks": [
+        {
+          "sub_items": [
+            {
+              "title": "FREE DELIVERY AND RETURNS FROM $30",
+              "icon": "delivery"
+            },
+            {
+              "title": "10% OFF ON ALL CLOTHING",
+              "icon": "cothing"
+            },
+            {
+              "title": "RETURNS EXTENDED TO 60 DAYS",
+              "icon": "returns"
+            },
+            {
+              "title": "LIFE-TIME GUARANTEE",
+              "icon": "life_time"
+            }
+          ]
+        },
+        {
+          "sub_items": [
+            {
+              "title": "FREE DELIVERY AND RETURNS FROM $30",
+              "icon": "delivery"
+            },
+            {
+              "title": "10% OFF ON ALL CLOTHING",
+              "icon": "cothing"
+            },
+            {
+              "title": "RETURNS EXTENDED TO 60 DAYS",
+              "icon": "returns"
+            },
+            {
+              "title": "LIFE-TIME GUARANTEE",
+              "icon": "life_time"
+            }
+          ]
+        },
+        {
+          "sub_items": [
+            {
+              "title": "FREE DELIVERY AND RETURNS FROM $30",
+              "icon": "delivery"
+            },
+            {
+              "title": "10% OFF ON ALL CLOTHING",
+              "icon": "cothing"
+            },
+            {
+              "title": "RETURNS EXTENDED TO 60 DAYS",
+              "icon": "returns"
+            },
+            {
+              "title": "LIFE-TIME GUARANTEE",
+              "icon": "life_time"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
