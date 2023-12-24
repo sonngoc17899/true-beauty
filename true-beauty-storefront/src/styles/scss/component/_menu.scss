@@ -34,4 +34,36 @@
       background: var(--color-header-links-hover, --color-accent);
     }
   }
+  &__popover {
+    /*img {
+      transform: scale(1);
+      will-change: transform;
+      transition: all .5s cubic-bezier(.104,.204,.492,1);
+    }*/
+  }
+}
+
+.text-link {
+  --color-header-links: #151515;
+  --color-header-links-hover: #151515;
+  --color-accent: #151515;
+  &:hover {
+    &:after {
+      transform: scale(1);
+      transition: all .25s cubic-bezier(.104,.204,.492,1);
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: var(--color-header-links-hover, --color-accent);
+  }
 }

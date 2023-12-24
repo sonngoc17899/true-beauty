@@ -15,6 +15,26 @@
   }
 }
 
+.is-selected {
+  .heading, .description, .btn {
+    animation: slide-up 0.7s ease-in-out;
+    position: relative;
+    translate: none;
+    rotate: none;
+    scale: none;
+  }
+}
+
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 /*! Flickity v2.1.2
 https://flickity.metafizzy.co
 ---------------------------------------------- */

@@ -6,7 +6,7 @@ import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 
 const FeaturedProducts = () => {
-  const { data } = useFeaturedProductsQuery()
+  const { data } = useFeaturedProductsQuery(4)
 
   return (
     <div className="py-12">
@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
         </div>
         <ul className="grid grid-cols-2 small:grid-cols-4 gap-x-4 gap-y-8">
           {data
-            ? data.map((product) => (
+            ? data.slice(4, 8).map((product) => (
                 <li key={product.id}>
                   <ProductPreview {...product} />
                 </li>

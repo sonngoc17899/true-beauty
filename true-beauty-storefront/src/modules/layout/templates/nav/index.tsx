@@ -42,14 +42,13 @@ const Nav = () => {
   const { toggle } = useMobileMenu()
 
   return (
-    <div
-      className={clsx("sticky top-0 inset-x-0 z-50 group")}
-    >
+    <div className={clsx("sticky top-0 inset-x-0 z-50 group")}>
       <header
         className={clsx(
           "header absolute border-0 border-white w-full left-0 top-0 h-20 px-8 mx-auto transition-colors bg-transparent border-b border-transparent duration-200",
           {
-            "!bg-white !border-gray-200 is-sticky-true relative": !isHome || isScrolled,
+            "!bg-white !border-gray-200 is-sticky-true relative":
+              !isHome || isScrolled,
           }
         )}
       >
@@ -72,7 +71,7 @@ const Nav = () => {
 
           <div className="flex items-center h-full">
             <Link href="/" className="text-xl-semi uppercase">
-              Kiwi Kiwi
+              True Beauty
             </Link>
           </div>
 

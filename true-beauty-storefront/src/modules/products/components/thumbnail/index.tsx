@@ -39,7 +39,7 @@ const ImageOrPlaceholder = ({
     <Image
       src={image}
       alt="Thumbnail"
-      className="absolute inset-0"
+      className="absolute inset-0 hover:scale-105 transition-all duration-500 cursor-pointer"
       draggable={false}
       fill
       sizes="100vw"
