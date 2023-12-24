@@ -20,7 +20,7 @@ const Nav = () => {
   useEffect(() => {
     if (isHome) {
       const detectScrollY = () => {
-        if (window.scrollY > 5) {
+        if (window.scrollY > 40) {
           setIsScrolled(true)
         } else {
           setIsScrolled(false)
@@ -45,10 +45,9 @@ const Nav = () => {
     <div className={clsx("sticky top-0 inset-x-0 z-50 group")}>
       <header
         className={clsx(
-          "header absolute border-0 border-white w-full left-0 top-0 h-20 px-8 mx-auto transition-colors bg-transparent border-b border-transparent duration-200",
+          "header absolute w-full left-0 top-0 h-20 px-8 mx-auto transition-colors bg-transparent border-transparent",
           {
-            "!bg-white !border-gray-200 is-sticky-true relative":
-              !isHome || isScrolled,
+            "is-sticky": !isHome || isScrolled,
           }
         )}
       >

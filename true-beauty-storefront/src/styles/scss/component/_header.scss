@@ -1,11 +1,19 @@
 .header {
+  background: transparent;
+  border-bottom-color: #fff6;
+  border-bottom-width: 1px;
   &:hover {
     &:before {
       transform: translateY(0);
     }
   }
-  &.is-sticky-true {
-
+  &.is-sticky {
+    &:before {
+      transform: translateY(0);
+    }
+    &:after {
+      opacity: 1;
+    }
   }
   &:before {
     content: "";
@@ -29,6 +37,7 @@
     z-index: -1;
     opacity: 0;
     pointer-events: none;
+    transition: all .25s cubic-bezier(.104,.204,.492,1);
   }
 }
 

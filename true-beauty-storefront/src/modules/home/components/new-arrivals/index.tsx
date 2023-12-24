@@ -16,6 +16,7 @@ const NewArrivals = () => {
     prevNextButtons: true,
     contain: true,
     groupCells: true,
+    pageDots: false,
   }
   const newArrivalsRef = useRef(null)
   const { data: products, isLoading: loadingProducts } =

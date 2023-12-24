@@ -87,7 +87,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               >
                 <Image
                   src={image.url}
-                  priority={index <= 2 ? true : false}
+                  priority={index <= 2}
                   className="absolute inset-0"
                   alt={`Product image ${index + 1}`}
                   fill

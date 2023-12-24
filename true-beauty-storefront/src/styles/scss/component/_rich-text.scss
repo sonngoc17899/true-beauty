@@ -1,0 +1,69 @@
+.rich-text {
+  --color-bg: #fcf0e6;
+  --color-text: #e46346;
+  --solid-button-background: #e46346;
+  --outline-button-label: #e46346;
+  --solid-button-label: #fcf0e6;
+  --bg-body: #fcf0e6;
+  --color-accent: #151515;
+  --color-accent-rgb: 21, 21, 21;
+  background: var(--color-bg);
+  color: var(--color-text, var(--color-body));
+  padding: 90px 0;
+  &__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  &__link {
+    span {
+      z-index: 10;
+    }
+      border: 1px solid var(--outline-button-label, var(--color-accent));
+      color: var(--outline-button-label, var(--color-accent));
+      background: transparent;
+      display: inline-flex;
+      cursor: pointer;
+      padding: 7px 30px;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      font-size: .875rem;
+      font-weight: 600;
+      border-radius: var(--button-border-radius, 0px);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      letter-spacing: var(--button-letter-spacing, .02em);
+      appearance: none;
+      transition: color .25s cubic-bezier(.104,.204,.492,1),background-color .25s cubic-bezier(.104,.204,.492,1),border-color .25s cubic-bezier(.104,.204,.492,1);
+      &:hover {
+        background: transparent;
+        color: var(--solid-button-label, #fff);
+        &:before {
+          transform: rotate3d(0,0,1,0) translateZ(0);
+        }
+      }
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -5%;
+        width: 125%;
+        height: 100%;
+        background: var(--bg-body);
+        z-index: 5;
+        opacity: 1;
+        border-radius: var(--button-border-radius, 0px);
+        transform-origin: bottom left;
+        backface-visibility: hidden;
+        transform: rotate3d(0,0,1,6deg) translate3d(-1.2em,110%,0);
+        will-change: transform;
+        transition: all .25s cubic-bezier(.104,.204,.492,1);
+        background: var(--outline-button-label, var(--color-accent));
+    }
+  }
+}

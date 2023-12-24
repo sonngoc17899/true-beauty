@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react"
 import Flickity from "react-flickity-component"
 import Image from "next/image"
 import Link from "next/link"
+import VideoPlayer from "../../../../share-component/VideoPlay"
 import SlideImage from "../../../../styles/image/slideshow-image.jpg"
 import SlideImage1 from "../../../../styles/image/slideshow-image1.jpg"
 
@@ -12,7 +13,9 @@ const Slider = () => {
     lazyLoad: 2,
     fullscreen: true,
     setGallerySize: false,
-    prevNextButtons: true,
+    prevNextButtons: false,
+    autoPlay: false,
+    fade: false,
   }
   const carouselRef = useRef(null)
   const slide = {
@@ -23,9 +26,10 @@ const Slider = () => {
         description: "It's hard to be nice if you don't feel comfortable",
         sub_heading: "EXPRESS YOURSELF",
         image: SlideImage1,
+        type: "video",
         button: {
           primary: {
-            title: "SHOP COLLECTION",
+            title: "Shop Dresses",
             url: "/collections/all",
           },
           secondary: {
@@ -39,9 +43,10 @@ const Slider = () => {
         description: "It's hard to be nice if you don't feel comfortable",
         sub_heading: "EXPRESS YOURSELF",
         image: SlideImage,
+        type: "image",
         button: {
           primary: {
-            title: "SHOP COLLECTION",
+            title: "Shop Sale",
             url: "/collections/all",
           },
           secondary: {
@@ -56,7 +61,7 @@ const Slider = () => {
   return (
     <Flickity
       ref={carouselRef}
-      className="carousel h-screen" // default ''
+      className="carousel carousel-home h-screen" // default ''
       elementType="div" // default 'div'
       options={flickityOptions} // takes flickity options {}
       disableImagesLoaded={false} // default false
@@ -64,11 +69,19 @@ const Slider = () => {
       static // default false
     >
       {slide.items.map((item, index) => (
-        <div className="carousel__cell h-full relative" key={index}>
-          <Image
-            src={item.image}
-            className="object-center object-cover h-full"
-          />
+        <div className="carousel__cell w-full h-screen relative" key={index}>
+          {item.type === "video" ? (
+            <VideoPlayer className="w-full" />
+          ) : (
+            <Image
+              priority={index <= 2}
+              src={item.image}
+              fill
+              className="object-center object-cover h-full"
+              alt="slide-image"
+            />
+          )}
+
           <div className="carousel__bg-overlay absolute top-0 left-0 w-full h-full z-10"></div>
           <div className="carousel__inner top-0 left-0 w-full h-full absolute flex justify-center items-center z-20">
             <div className="carousel__content py-16 px-14 text-white text-center">
@@ -91,23 +104,25 @@ const Slider = () => {
                 ))}*/}
                 {item.description}
               </p>
-              {item.button.primary && (
+              {item.button.primary.title && (
                 <div className="button-overflow-hidden btn text-sm">
                   <Link
                     href={item.button.primary.url}
-                    className="inline-flex justify-center items-center w-fit py-1 px-3 border border-white h-12"
+                    className="inline-flex justify-center items-center w-fit py-1 px-3 border border-white h-12 carousel__link"
                     passHref
                   >
                     <span>{item.button.primary.title}</span>
                   </Link>
                 </div>
               )}
-              {item.button.secondary && (
-                <div className="button-overflow-hidden btn text-sm">
-                  <Link href={item.button.secondary.url} passHref>
-                    <span>{item.button.secondary.title}</span>
-                  </Link>
-                </div>
+              {item.button.secondary.title && (
+                <Link
+                  href={item.button.secondary.url}
+                  passHref
+                  className="relative text-sm button-overflow-hidden btn carousel__link"
+                >
+                  <span>{item.button.secondary.title}</span>
+                </Link>
               )}
             </div>
           </div>

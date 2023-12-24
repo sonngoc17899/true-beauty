@@ -1,5 +1,5 @@
 import Footer from "@modules/layout/templates/footer"
-import AnnoucementBar from "@modules/header/component/AnnoucementBar";
+import AnnoucementBar from "@modules/header/component/AnnoucementBar"
 import Nav from "@modules/layout/templates/nav"
 
 export default function PageLayout({
@@ -9,7 +9,7 @@ export default function PageLayout({
 }) {
   return (
     <>
-        <AnnoucementBar/>
+      <AnnoucementBar />
       <Nav />
       {children}
       <Footer />

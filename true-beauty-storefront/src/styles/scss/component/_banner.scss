@@ -1,0 +1,79 @@
+.banner {
+  --solid-button-background: #151515;
+  --solid-button-label: #ffffff;
+  --color-body: #151515;
+  --color-overlay-rgb: 0, 0, 0;
+  --overlay-opacity: 0.1;
+  .subheading {
+    letter-spacing: 0.4rem;
+  }
+  &__image-overlay {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+      background-color: rgba(var(--color-overlay-rgb),var(--overlay-opacity));
+      pointer-events: none;
+    }
+  }
+  &__link {
+    span {
+      z-index: 10;
+    }
+    background: #fff;
+    border-color: #fff;
+    text-transform: uppercase;
+    display: inline-flex;
+    cursor: pointer;
+    padding: 7px 30px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: var(--button-letter-spacing, .02em);
+    background: #fff;
+    border-color: #fff;
+    color: var(--color-body);
+    border-radius: var(--button-border-radius, 0px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 1;
+    transition: color .25s cubic-bezier(.104,.204,.492,1),background-color .25s cubic-bezier(.104,.204,.492,1),border-color .25s cubic-bezier(.104,.204,.492,1);
+    &:before {
+      transition: all .25s cubic-bezier(.104,.204,.492,1);
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -5%;
+      width: 125%;
+      height: 100%;
+      background: var(--bg-body);
+      z-index: 5;
+      opacity: 1;
+      background: var(--color-body);
+      border-radius: var(--button-border-radius, 0px);
+      transform-origin: bottom left;
+      backface-visibility: hidden;
+      transform: rotate3d(0,0,1,6deg) translate3d(-1.2em,110%,0);
+      will-change: transform;
+    }
+    &:hover {
+      color: #fff;
+      border-color: var(--color-body);
+      &:before {
+        transform: rotate3d(0,0,1,0) translateZ(0);
+      }
+    }
+  }
+}

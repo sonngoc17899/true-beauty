@@ -8,15 +8,17 @@
   line-height: 1;
   z-index: 60;
   padding: 14px 0;
+  height: 42px;
   &--inner {
     --font-announcement-scale: 1.0;
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: start;
     max-width: none;
     white-space: nowrap;
     font-size: calc(var(--font-announcement-scale, 1) * 13px);
-    font-weight: 400;
+    font-weight: 300;
     overflow: hidden;
   }
   &--item {
@@ -24,6 +26,7 @@
     align-items: center;
     padding: 0 20px;
     letter-spacing: .03em;
+    font-weight: 300;
     svg {
       margin-right: 12px;
       height: 14px;
@@ -32,15 +35,17 @@
   }
 }
 
-.announcement-bar--marquee.direction-left > div {
+.announcement-bar--marquee.direction-left > * {
   --marquee-speed: 20s;
   animation: marquee var(--marquee-speed) linear infinite;
+  flex-shrink: 0;
+  will-change: transform;
 }
 
 @keyframes marquee {
   0% {
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -moz-transform: translateX(-100%);
